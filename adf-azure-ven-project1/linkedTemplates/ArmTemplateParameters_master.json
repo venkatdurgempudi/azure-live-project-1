@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-azure-ven-project1"
+		},
+		"SqlServer_azure_ven_project1_password": {
+			"value": ""
+		},
+		"adb_ven_project1_accessToken": {
+			"value": ""
+		},
+		"ls_ADLS_ven_project1_accountKey": {
+			"value": ""
+		},
+		"SqlServer_azure_ven_project1_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"SqlServer_azure_ven_project1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"SqlServer_azure_ven_project1_properties_typeProperties_userName": {
+			"value": "adf_user"
+		},
+		"adb_ven_project1_properties_typeProperties_existingClusterId": {
+			"value": "0425-152453-jgjeb92a"
+		},
+		"ls_ADLS_ven_project1_properties_typeProperties_url": {
+			"value": "https://adlsvenproject1.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

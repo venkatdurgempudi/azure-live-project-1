@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-azure-ven-project1"
+		},
+		"SqlServer_azure_ven_project1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer_azure_ven_project1'"
+		},
+		"adb_ven_project1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'adb_ven_project1'"
+		},
+		"ls_ADLS_ven_project1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_ADLS_ven_project1'"
+		},
+		"SqlServer_azure_ven_project1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"SqlServer_azure_ven_project1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"SqlServer_azure_ven_project1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adf_user"
+		},
+		"adb_ven_project1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0425-152453-jgjeb92a"
+		},
+		"ls_ADLS_ven_project1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsvenproject1.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-azure-ven-project1_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"adb_ven_project1_accessToken": {
+						"value": "[parameters('adb_ven_project1_accessToken')]"
+					},
+					"ls_ADLS_ven_project1_accountKey": {
+						"value": "[parameters('ls_ADLS_ven_project1_accountKey')]"
+					},
+					"SqlServer_azure_ven_project1_password": {
+						"value": "[parameters('SqlServer_azure_ven_project1_password')]"
+					},
+					"adb_ven_project1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('adb_ven_project1_properties_typeProperties_existingClusterId')]"
+					},
+					"ls_ADLS_ven_project1_properties_typeProperties_url": {
+						"value": "[parameters('ls_ADLS_ven_project1_properties_typeProperties_url')]"
+					},
+					"SqlServer_azure_ven_project1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer_azure_ven_project1_properties_typeProperties_server')]"
+					},
+					"SqlServer_azure_ven_project1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer_azure_ven_project1_properties_typeProperties_database')]"
+					},
+					"SqlServer_azure_ven_project1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer_azure_ven_project1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
