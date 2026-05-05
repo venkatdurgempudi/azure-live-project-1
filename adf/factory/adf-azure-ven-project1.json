@@ -1,0 +1,15 @@
+{
+	"name": "adf-azure-ven-project1",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a128806d-7d99-43b1-8307-98783c8ed578",
+		"tenantId": "4903db91-b0fc-4541-90f1-d44a888650ef"
+	}
+}

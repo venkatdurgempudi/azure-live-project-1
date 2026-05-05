@@ -1,0 +1,33 @@
+{
+	"name": "pl_silver_gold_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "run_silver_gold",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/mr.venkat8486@gmail.com/nb_silver_gold_ven_project1"
+				},
+				"linkedServiceName": {
+					"referenceName": "adb_ven_project1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "databricks"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-04-26T16:08:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

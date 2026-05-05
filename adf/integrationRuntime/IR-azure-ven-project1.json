@@ -1,0 +1,7 @@
+{
+	"name": "IR-azure-ven-project1",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "To migrate tables from MS SQL On-Prem to Azure"
+	}
+}

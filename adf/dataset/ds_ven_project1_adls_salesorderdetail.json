@@ -1,0 +1,24 @@
+{
+	"name": "ds_ven_project1_adls_salesorderdetail",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_ADLS_ven_project1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat('bronze/sales_order_detail/load_date=', formatDateTime(utcNow(),'yyyy-MM-dd'))",
+					"type": "Expression"
+				},
+				"fileSystem": "datalake-ven-project1"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

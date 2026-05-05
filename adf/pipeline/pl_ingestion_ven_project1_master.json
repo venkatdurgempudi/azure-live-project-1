@@ -1,0 +1,75 @@
+{
+	"name": "pl_ingestion_ven_project1_master",
+	"properties": {
+		"activities": [
+			{
+				"name": "run_header",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ingest_ven_project1_sales_header",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "run_detail",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "run_header",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ingest_ven_project1_sales_detail",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "run_product",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "run_detail",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ingest_ven_project1_product",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "v0"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-04-26T11:09:13Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

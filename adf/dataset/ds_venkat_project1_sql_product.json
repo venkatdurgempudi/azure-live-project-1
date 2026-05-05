@@ -1,0 +1,17 @@
+{
+	"name": "ds_venkat_project1_sql_product",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer_azure_ven_project1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Production",
+			"table": "Product"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
