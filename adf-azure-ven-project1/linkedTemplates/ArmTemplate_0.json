@@ -130,7 +130,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Users/mr.venkat8486@gmail.com/nb_silver_gold_ven_project1"
+							"notebookPath": "/Users/mr.venkat8486@gmail.com/azure-live-project-1/databricks/notebooks/nb_silver_gold_ven_project1"
 						},
 						"linkedServiceName": {
 							"referenceName": "adb_ven_project1",
